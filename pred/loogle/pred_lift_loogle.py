@@ -166,8 +166,8 @@ def main(
     output_path: str,
     synqa_type: Literal["every_sentence"],
     synqa_dir: str,
-    server_config_path: str = "configs/generator/vllm-qwen3-backend.yaml",
-    dataset_config_path: str = "configs/generator/vllm-qwen3-everysentence-10.yaml",
+    server_config_path: str = "configs/generator/vllm-qwen2.5-backend.yaml",
+    dataset_config_path: str = "configs/generator/vllm-qwen2.5-everysentence-10.yaml",
     loogle_dir: str = "datasets/loogle/",
     loogle_config_dir: str = "datasets/loogle_config/",
     model_name_or_path: str = "models/Meta-Llama-3-8B-Instruct",
@@ -259,7 +259,7 @@ if __name__ == "__main__":
     parser.add_argument("--output_path", required=True)
     parser.add_argument("--synqa_type", required=True, choices=["every_sentence"])
     parser.add_argument("--synqa_dir", required=True)
-    parser.add_argument("--server_config_path", default="configs/generator/vllm-qwen3-backend.yaml")
+    parser.add_argument("--server_config_path", default="configs/generator/vllm-qwen2.5-backend.yaml")
     parser.add_argument("--dataset_config_path", required=True)
     parser.add_argument("--loogle_dir", default="datasets/loogle/")
     parser.add_argument("--loogle_config_dir", default="datasets/loogle_config/")

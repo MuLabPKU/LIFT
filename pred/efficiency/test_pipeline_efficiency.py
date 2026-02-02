@@ -13,7 +13,7 @@ from transformers import AutoTokenizer, PreTrainedTokenizer, Trainer
 def test_with_pipeline(input_length: int, n: int = 0, should_ignore: bool = False):
     accelerator = accelerate.Accelerator()
     # Prepare (this part is not counted in the test time)
-    server = AsyncOpenAIServer.from_config("configs/generator/vllm-qwen3-backend.yaml")
+    server = AsyncOpenAIServer.from_config("configs/generator/vllm-qwen2.5-backend.yaml")
     tokenizer: PreTrainedTokenizer = AutoTokenizer.from_pretrained("models/Meta-Llama-3-8B-Instruct")
     with open("configs/training/lift_lora_fast.yaml", "r") as f:
         training_args = yaml.safe_load(f)
@@ -46,7 +46,7 @@ def test_with_pipeline(input_length: int, n: int = 0, should_ignore: bool = Fals
     st_event.record()
     # NOTE We do not use cache here -- generation is forced to be online.
     dataset = EverySentenceDataset.from_config(
-        "configs/generator/vllm-qwen3-pipelinetest.yaml",
+        "configs/generator/vllm-qwen2.5-pipelinetest.yaml",
         tokenizer,
         is_main_process=accelerator.is_main_process,
         server=server,
@@ -69,7 +69,7 @@ def test_with_pipeline(input_length: int, n: int = 0, should_ignore: bool = Fals
 def test_without_pipeline(input_length: int, n: int = 0, should_ignore: bool = False):
     accelerator = accelerate.Accelerator()
     # Prepare (this part is not counted in the test time)
-    server = AsyncOpenAIServer.from_config("configs/generator/vllm-qwen3-backend.yaml")
+    server = AsyncOpenAIServer.from_config("configs/generator/vllm-qwen2.5-backend.yaml")
     tokenizer: PreTrainedTokenizer = AutoTokenizer.from_pretrained("models/Meta-Llama-3-8B-Instruct")
     with open("configs/training/lift_lora_fast.yaml", "r") as f:
         training_args = yaml.safe_load(f)
@@ -104,7 +104,7 @@ def test_without_pipeline(input_length: int, n: int = 0, should_ignore: bool = F
     if os.path.exists("cache_for_pipeline_efficiency.jsonl") and accelerator.is_main_process:
         os.remove("cache_for_pipeline_efficiency.jsonl")
     dataset = EverySentenceDataset.from_config(
-        "configs/generator/vllm-qwen3-pipelinetest.yaml",
+        "configs/generator/vllm-qwen2.5-pipelinetest.yaml",
         tokenizer,
         is_main_process=accelerator.is_main_process,
         server=server,
@@ -118,7 +118,7 @@ def test_without_pipeline(input_length: int, n: int = 0, should_ignore: bool = F
     accelerator.wait_for_everyone()
 
     dataset = EverySentenceDataset.from_config(
-        "configs/generator/vllm-qwen3-pipelinetest.yaml",
+        "configs/generator/vllm-qwen2.5-pipelinetest.yaml",
         tokenizer,
         is_main_process=accelerator.is_main_process,
         cache_path="cache_for_pipeline_efficiency.jsonl",

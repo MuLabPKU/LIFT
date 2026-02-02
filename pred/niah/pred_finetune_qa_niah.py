@@ -66,8 +66,8 @@ def pred_lift_niah(
     input_path: str,
     output_path: str,
     synqa_dir: str = "outputs/niah/synqa",
-    server_config: str = "configs/generator/vllm-qwen3-backend.yaml",
-    dataset_config: str = "configs/generator/vllm-qwen3-niah.yaml",
+    server_config: str = "configs/generator/vllm-qwen2.5-backend.yaml",
+    dataset_config: str = "configs/generator/vllm-qwen2.5-niah.yaml",
     num_workers: int = 1,
     worker_id: int = 0,
     overwrite: bool = False,
@@ -129,8 +129,8 @@ if __name__ == "__main__":
     parser.add_argument("--input_path", type=str, required=True)
     parser.add_argument("--output_path", type=str, required=True)
     parser.add_argument("--synqa_dir", type=str, default="outputs/niah/synqa")
-    parser.add_argument("--server_config", type=str, default="configs/generator/vllm-qwen3-backend.yaml")
-    parser.add_argument("--dataset_config", type=str, default="configs/generator/vllm-qwen3-niah.yaml")
+    parser.add_argument("--server_config", type=str, default="configs/generator/vllm-qwen2.5-backend.yaml")
+    parser.add_argument("--dataset_config", type=str, default="configs/generator/vllm-qwen2.5-niah.yaml")
     parser.add_argument("--num_workers", type=int, default=1)
     parser.add_argument("--worker_id", type=int, default=0)
     parser.add_argument("--overwrite", action="store_true")

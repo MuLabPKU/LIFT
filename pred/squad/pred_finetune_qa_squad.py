@@ -68,8 +68,8 @@ def pred_lift_onlyqa_squad(
     model_name_or_path: str,
     output_path: str,
     cache_dir: Optional[str] = None,
-    server_config: str = "configs/generator/vllm-qwen3-backend.yaml",
-    dataset_config: str = "configs/generator/vllm-qwen3-everysentence.yaml",
+    server_config: str = "configs/generator/vllm-qwen2.5-backend.yaml",
+    dataset_config: str = "configs/generator/vllm-qwen2.5-everysentence-10.yaml",
     dataset_dir: str = "datasets/squad",
     adapter: Literal["lora"] = "lora",
     adapter_config: Optional[str] = "configs/adapter/lora_128.yaml",
@@ -114,8 +114,8 @@ if __name__ == "__main__":
     parser.add_argument("--model_name_or_path", type=str, required=True, help="Model name or path.")
     parser.add_argument("--output_path", type=str, required=True, help="Path to save the output predictions.")
     parser.add_argument("--cache_dir", type=str, default=None, help="Directory to cache the prepared dataset.")
-    parser.add_argument("--server_config", type=str, default="configs/generator/vllm-qwen3-backend.yaml", help="LLM server configuration file.")
-    parser.add_argument("--dataset_config", type=str, default="configs/generator/vllm-qwen3-everysentence.yaml", help="Dataset configuration file.")
+    parser.add_argument("--server_config", type=str, default="configs/generator/vllm-qwen2.5-backend.yaml", help="LLM server configuration file.")
+    parser.add_argument("--dataset_config", type=str, default="configs/generator/vllm-qwen2.5-everysentence-10.yaml", help="Dataset configuration file.")
     parser.add_argument("--dataset_dir", type=str, default="datasets/squad", help="Dataset directory.")
     parser.add_argument("--adapter", type=str, choices=["lora"], default="lora", help="Adapter type.")
     parser.add_argument("--adapter_config", type=str, default="configs/adapter/lora_128.yaml", help="Adapter configuration file.")

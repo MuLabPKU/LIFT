@@ -1,0 +1,6 @@
+model: $VLLM_MODEL_NAME
+base_url: $VLLM_BASE_URL
+api_key: "***"
+max_concurrency: 64
+max_output_tokens: 8000
+max_retries: 4
