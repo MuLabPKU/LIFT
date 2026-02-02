@@ -1,0 +1,6 @@
+model: deepseek-chat
+base_url: https://api.deepseek.com
+api_key: $DEEPSEEK_API_KEY
+max_concurrency: 64
+max_output_tokens: 8000
+max_retries: 4
