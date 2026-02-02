@@ -1,0 +1,3 @@
+use_pydantic: False
+system_role_name: system
+num_tasks_per_sentence: 10

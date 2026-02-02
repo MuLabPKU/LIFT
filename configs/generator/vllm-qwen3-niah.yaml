@@ -1,0 +1,12 @@
+use_pydantic: False
+system_role_name: system
+num_tasks_per_sentence: 10
+extra_requirement: |
+  # Instruction
+  First judge whether the last part of the paragraph is relevant to the rest part of the paragraph.
+  If it is relevant, generate no question-answer pair.
+  Otherwise, generate at most 10 question-answer pairs about the last part of the paragraph.
+  # Example:
+  The last part of the paragraph: The perfect way to start a Sunday in Portland is to grab a flat white from a neighborhood café, browse the shelves at a cozy used bookstore, and then take a slow walk through Forest Park.
+  Question: What is the perfect way to start a Sunday in Portland?
+  Answer: The perfect way to start a Sunday in Portland is to grab a flat white from a neighborhood café, browse the shelves at a cozy used bookstore, and then take a slow walk through Forest Park.

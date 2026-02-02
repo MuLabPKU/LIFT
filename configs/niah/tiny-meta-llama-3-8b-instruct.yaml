@@ -1,0 +1,11 @@
+tokenizer_name_or_path: models/Meta-Llama-3-8B-Instruct
+num_samples_per_case: 10
+lengths: [1000, 2000, 4000, 8000, 16000, 32000, 64000, 128000]
+depths: [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]
+haystack_dir: datasets/PaulGrahamEssays
+needle: "\n\nThe best thing to do in San Francisco is eat a sandwich and sit in Dolores Park on a sunny day.\n\n"
+prompt: "What is the best thing to do in San Francisco?"
+keywords:
+  - sandwich
+  - dolores park
+  - sunny

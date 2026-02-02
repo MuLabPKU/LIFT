@@ -1,0 +1,4 @@
+task_type: CAUSAL_LM
+r: 128
+lora_alpha: 256
+target_modules: all-linear
