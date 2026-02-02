@@ -1,0 +1,7 @@
+gradient_checkpointing: True
+per_device_train_batch_size: 4
+gradient_accumulation_steps: 1
+learning_rate: 3.0e-4
+weight_decay: 0.0
+num_train_epochs: 1
+disable_tqdm: False
