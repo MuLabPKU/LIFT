@@ -74,10 +74,10 @@ LIFT package mainly wraps the data generation process, while the training proces
 If you find LIFT useful in your research, please cite the paper:
 
 ```bibtex
-@misc{mao2025liftimprovinglongcontext,
-      title={LIFT: Improving Long Context Understanding of Large Language Models through Long Input Fine-Tuning}, 
+@misc{mao2026liftnovelframeworkenhancing,
+      title={LIFT: A Novel Framework for Enhancing Long-Context Understanding of LLMs via Long Input Fine-Tuning}, 
       author={Yansheng Mao and Yufei Xu and Jiaqi Li and Fanxu Meng and Haotong Yang and Zilong Zheng and Xiyuan Wang and Muhan Zhang},
-      year={2025},
+      year={2026},
       eprint={2502.14644},
       archivePrefix={arXiv},
       primaryClass={cs.CL},
